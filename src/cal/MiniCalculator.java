@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 public class MiniCalculator {
 
+	// my name is jeff
 	JFrame frame;
 	private JTextField textField;
 

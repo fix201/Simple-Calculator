@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,7 +29,7 @@ public class MiniCalculator {
 		return display;
 	}
 
-	public void setTextField(JTextField display) {
+	public void setDisplay(JTextField display) {
 		this.display = display;
 		System.out.println(this.display);
 	}
@@ -53,14 +53,7 @@ public class MiniCalculator {
 		display.setBounds(15, 16, 456, 93);
 		display.setColumns(10);
 		display.addActionListener(new Controller());
-		display.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent ke) {
-				char c = ke.getKeyChar();
-				if (!Character.isDigit(c)) { // Only digits
-					ke.consume();
-				}
-			}
-		});
+		display.addKeyListener(new KeyListeners());
 		frame.getContentPane().add(display);
 
 		JButton ac = new JButton("AC");
@@ -239,6 +232,31 @@ public class MiniCalculator {
 			  } else { System.out.println(" was not a button"); }
 			 */
 
+		}
+
+	}
+
+	class KeyListeners implements KeyListener {
+
+		@Override
+		public void keyPressed(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void keyTyped(KeyEvent ke) {
+			// TODO Auto-generated method stub
+			char c = ke.getKeyChar();
+			if (!Character.isDigit(c)) { // Only digits
+				ke.consume();
+			}
 		}
 
 	}

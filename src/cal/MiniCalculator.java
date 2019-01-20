@@ -52,7 +52,7 @@ public class MiniCalculator {
 		display.setEditable(true);
 		display.setBounds(15, 16, 456, 93);
 		display.setColumns(10);
-		display.addActionListener(new Controller());
+		display.addActionListener(new ActionListeners());
 		display.addKeyListener(new KeyListeners());
 		frame.getContentPane().add(display);
 
@@ -60,90 +60,90 @@ public class MiniCalculator {
 		ac.setBackground(UIManager.getColor("Button.darkShadow"));
 		ac.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		ac.setBounds(15, 125, 98, 80);
-		ac.addActionListener(new Controller());
+		ac.addActionListener(new ActionListeners());
 		frame.getContentPane().add(ac);
 
 		JButton seven = new JButton("7");
 		seven.setBackground(UIManager.getColor("Button.darkShadow"));
 		seven.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		seven.setBounds(15, 227, 98, 80);
-		seven.addActionListener(new Controller());
+		seven.addActionListener(new ActionListeners());
 		frame.getContentPane().add(seven);
 
 		JButton four = new JButton("4");
 		four.setBackground(UIManager.getColor("Button.darkShadow"));
 		four.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		four.setBounds(15, 334, 98, 80);
-		four.addActionListener(new Controller());
+		four.addActionListener(new ActionListeners());
 		frame.getContentPane().add(four);
 
 		JButton plus_or_minus = new JButton("+/ -");
 		plus_or_minus.setBackground(UIManager.getColor("Button.darkShadow"));
 		plus_or_minus.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		plus_or_minus.setBounds(136, 125, 98, 80);
-		plus_or_minus.addActionListener(new Controller());
+		plus_or_minus.addActionListener(new ActionListeners());
 		frame.getContentPane().add(plus_or_minus);
 
 		JButton percent = new JButton("%");
 		percent.setBackground(UIManager.getColor("Button.darkShadow"));
 		percent.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		percent.setBounds(249, 125, 98, 80);
-		percent.addActionListener(new Controller());
+		percent.addActionListener(new ActionListeners());
 		frame.getContentPane().add(percent);
 
 		JButton divide = new JButton("/");
 		divide.setBackground(UIManager.getColor("Button.darkShadow"));
 		divide.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		divide.setBounds(373, 125, 98, 80);
-		divide.addActionListener(new Controller());
+		divide.addActionListener(new ActionListeners());
 		frame.getContentPane().add(divide);
 
 		JButton eight = new JButton("8");
 		eight.setBackground(UIManager.getColor("Button.darkShadow"));
 		eight.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		eight.setBounds(136, 227, 98, 80);
-		eight.addActionListener(new Controller());
+		eight.addActionListener(new ActionListeners());
 		frame.getContentPane().add(eight);
 
 		JButton nine = new JButton("9");
 		nine.setBackground(UIManager.getColor("Button.darkShadow"));
 		nine.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		nine.setBounds(249, 227, 98, 80);
-		nine.addActionListener(new Controller());
+		nine.addActionListener(new ActionListeners());
 		frame.getContentPane().add(nine);
 
 		JButton multiply = new JButton("x");
 		multiply.setBackground(UIManager.getColor("Button.darkShadow"));
 		multiply.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		multiply.setBounds(373, 227, 98, 80);
-		multiply.addActionListener(new Controller());
+		multiply.addActionListener(new ActionListeners());
 		frame.getContentPane().add(multiply);
 
 		JButton five = new JButton("5");
 		five.setBackground(UIManager.getColor("Button.darkShadow"));
 		five.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		five.setBounds(136, 334, 98, 80);
-		five.addActionListener(new Controller());
+		five.addActionListener(new ActionListeners());
 		frame.getContentPane().add(five);
 
 		JButton six = new JButton("6");
 		six.setBackground(UIManager.getColor("Button.darkShadow"));
 		six.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		six.setBounds(249, 334, 98, 80);
-		six.addActionListener(new Controller());
+		six.addActionListener(new ActionListeners());
 		frame.getContentPane().add(six);
 
 		JButton subtract = new JButton("-");
 		subtract.setBackground(UIManager.getColor("Button.darkShadow"));
 		subtract.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		subtract.setBounds(373, 334, 98, 80);
-		subtract.addActionListener(new Controller());
+		subtract.addActionListener(new ActionListeners());
 		frame.getContentPane().add(subtract);
 
 		JButton zero = new JButton("0");
 		zero.setBackground(UIManager.getColor("Button.darkShadow"));
 		zero.setFont(new Font("Times New Roman", Font.BOLD, 40));
-		zero.addActionListener(new Controller());
+		zero.addActionListener(new ActionListeners());
 		zero.setBounds(15, 532, 219, 80);
 		frame.getContentPane().add(zero);
 
@@ -151,34 +151,34 @@ public class MiniCalculator {
 		decimal.setBackground(UIManager.getColor("Button.darkShadow"));
 		decimal.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		decimal.setBounds(249, 532, 98, 80);
-		decimal.addActionListener(new Controller());
+		decimal.addActionListener(new ActionListeners());
 		frame.getContentPane().add(decimal);
 
 		JButton result = new JButton("=");
 		result.setBackground(UIManager.getColor("Button.darkShadow"));
 		result.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		result.setBounds(373, 532, 98, 80);
-		result.addActionListener(new Controller());
+		result.addActionListener(new ActionListeners());
 		frame.getContentPane().add(result);
 
 		JButton one = new JButton("1");
 		one.setBackground(UIManager.getColor("Button.darkShadow"));
 		one.setFont(new Font("Times New Roman", Font.BOLD, 40));
-		one.addActionListener(new Controller());
+		one.addActionListener(new ActionListeners());
 		one.setBounds(15, 436, 98, 80);
 		frame.getContentPane().add(one);
 
 		JButton two = new JButton("2");
 		two.setBackground(UIManager.getColor("Button.darkShadow"));
 		two.setFont(new Font("Times New Roman", Font.BOLD, 40));
-		two.addActionListener(new Controller());
+		two.addActionListener(new ActionListeners());
 		two.setBounds(136, 436, 98, 80);
 		frame.getContentPane().add(two);
 
 		JButton three = new JButton("3");
 		three.setBackground(UIManager.getColor("Button.darkShadow"));
 		three.setFont(new Font("Times New Roman", Font.BOLD, 40));
-		three.addActionListener(new Controller());
+		three.addActionListener(new ActionListeners());
 		three.setBounds(249, 436, 98, 80);
 		frame.getContentPane().add(three);
 
@@ -186,7 +186,7 @@ public class MiniCalculator {
 		add.setBackground(UIManager.getColor("Button.darkShadow"));
 		add.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		add.setBounds(373, 436, 98, 80);
-		add.addActionListener(new Controller());
+		add.addActionListener(new ActionListeners());
 		frame.getContentPane().add(add);
 	}
 
@@ -198,7 +198,7 @@ public class MiniCalculator {
 		this.frame = frame;
 	}
 
-	class Controller implements ActionListener {
+	class ActionListeners implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

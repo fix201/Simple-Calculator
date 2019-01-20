@@ -1,5 +1,7 @@
 package cal;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -8,12 +10,13 @@ import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class MiniCalculator {
 
-	// my name is jeff
 	JFrame frame;
-	private JTextField textField;
+	private JTextField display;
 
 	/**
 	 * Create the application.
@@ -22,13 +25,13 @@ public class MiniCalculator {
 		initialize();
 	}
 
-	public JTextField getTextField() {
-		return textField;
+	public JTextField getDisplay() {
+		return display;
 	}
 
-	public void setTextField(JTextField textField) {
-		this.textField = textField;
-		System.out.println(this.textField);
+	public void setTextField(JTextField display) {
+		this.display = display;
+		System.out.println(this.display);
 	}
 
 	/**
@@ -36,17 +39,21 @@ public class MiniCalculator {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		setFrame(frame);
-		getFrame().setBounds(100, 100, 513, 695);
-		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		getFrame().getContentPane().setLayout(null);
+		frame.setBounds(100, 100, 513, 695);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 
-		textField = new JTextField();
-		textField.setEditable(true);
-		textField.setBounds(15, 16, 456, 93);
-		textField.addActionListener(new Controller());
-		textField.addKeyListener(new KeyAdapter() {
-			@Override
+		display = new JTextField();
+		display.setBackground(Color.LIGHT_GRAY);
+		display.setForeground(Color.BLACK);
+		display.setFont(new Font("Times New Roman", Font.BOLD, 54));
+		display.setHorizontalAlignment(SwingConstants.RIGHT);
+		display.setText("0");
+		display.setEditable(true);
+		display.setBounds(15, 16, 456, 93);
+		display.setColumns(10);
+		display.addActionListener(new Controller());
+		display.addKeyListener(new KeyAdapter() {
 			public void keyTyped(KeyEvent ke) {
 				char c = ke.getKeyChar();
 				if (!Character.isDigit(c)) { // Only digits
@@ -54,103 +61,140 @@ public class MiniCalculator {
 				}
 			}
 		});
-		getFrame().getContentPane().add(textField);
-		textField.setColumns(10);
+		frame.getContentPane().add(display);
 
 		JButton ac = new JButton("AC");
-		ac.addActionListener(new Controller());
+		ac.setBackground(UIManager.getColor("Button.darkShadow"));
+		ac.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		ac.setBounds(15, 125, 98, 80);
-		getFrame().getContentPane().add(ac);
+		ac.addActionListener(new Controller());
+		frame.getContentPane().add(ac);
 
 		JButton seven = new JButton("7");
-		seven.addActionListener(new Controller());
+		seven.setBackground(UIManager.getColor("Button.darkShadow"));
+		seven.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		seven.setBounds(15, 227, 98, 80);
-		getFrame().getContentPane().add(seven);
+		seven.addActionListener(new Controller());
+		frame.getContentPane().add(seven);
 
 		JButton four = new JButton("4");
-		four.addActionListener(new Controller());
+		four.setBackground(UIManager.getColor("Button.darkShadow"));
+		four.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		four.setBounds(15, 334, 98, 80);
-		getFrame().getContentPane().add(four);
+		four.addActionListener(new Controller());
+		frame.getContentPane().add(four);
 
-		JButton plus_or_minus = new JButton("+/-");
-		plus_or_minus.addActionListener(new Controller());
+		JButton plus_or_minus = new JButton("+/ -");
+		plus_or_minus.setBackground(UIManager.getColor("Button.darkShadow"));
+		plus_or_minus.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		plus_or_minus.setBounds(136, 125, 98, 80);
-		getFrame().getContentPane().add(plus_or_minus);
+		plus_or_minus.addActionListener(new Controller());
+		frame.getContentPane().add(plus_or_minus);
 
 		JButton percent = new JButton("%");
-		percent.addActionListener(new Controller());
+		percent.setBackground(UIManager.getColor("Button.darkShadow"));
+		percent.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		percent.setBounds(249, 125, 98, 80);
-		getFrame().getContentPane().add(percent);
+		percent.addActionListener(new Controller());
+		frame.getContentPane().add(percent);
 
 		JButton divide = new JButton("/");
-		divide.addActionListener(new Controller());
+		divide.setBackground(UIManager.getColor("Button.darkShadow"));
+		divide.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		divide.setBounds(373, 125, 98, 80);
-		getFrame().getContentPane().add(divide);
+		divide.addActionListener(new Controller());
+		frame.getContentPane().add(divide);
 
 		JButton eight = new JButton("8");
-		eight.addActionListener(new Controller());
+		eight.setBackground(UIManager.getColor("Button.darkShadow"));
+		eight.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		eight.setBounds(136, 227, 98, 80);
-		getFrame().getContentPane().add(eight);
+		eight.addActionListener(new Controller());
+		frame.getContentPane().add(eight);
 
 		JButton nine = new JButton("9");
-		nine.addActionListener(new Controller());
+		nine.setBackground(UIManager.getColor("Button.darkShadow"));
+		nine.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		nine.setBounds(249, 227, 98, 80);
-		getFrame().getContentPane().add(nine);
+		nine.addActionListener(new Controller());
+		frame.getContentPane().add(nine);
 
 		JButton multiply = new JButton("x");
-		multiply.addActionListener(new Controller());
+		multiply.setBackground(UIManager.getColor("Button.darkShadow"));
+		multiply.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		multiply.setBounds(373, 227, 98, 80);
-		getFrame().getContentPane().add(multiply);
+		multiply.addActionListener(new Controller());
+		frame.getContentPane().add(multiply);
 
 		JButton five = new JButton("5");
-		five.addActionListener(new Controller());
+		five.setBackground(UIManager.getColor("Button.darkShadow"));
+		five.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		five.setBounds(136, 334, 98, 80);
-		getFrame().getContentPane().add(five);
+		five.addActionListener(new Controller());
+		frame.getContentPane().add(five);
 
 		JButton six = new JButton("6");
-		six.addActionListener(new Controller());
+		six.setBackground(UIManager.getColor("Button.darkShadow"));
+		six.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		six.setBounds(249, 334, 98, 80);
-		getFrame().getContentPane().add(six);
+		six.addActionListener(new Controller());
+		frame.getContentPane().add(six);
 
 		JButton subtract = new JButton("-");
-		subtract.addActionListener(new Controller());
+		subtract.setBackground(UIManager.getColor("Button.darkShadow"));
+		subtract.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		subtract.setBounds(373, 334, 98, 80);
-		getFrame().getContentPane().add(subtract);
+		subtract.addActionListener(new Controller());
+		frame.getContentPane().add(subtract);
 
 		JButton zero = new JButton("0");
+		zero.setBackground(UIManager.getColor("Button.darkShadow"));
+		zero.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		zero.addActionListener(new Controller());
 		zero.setBounds(15, 532, 219, 80);
-		getFrame().getContentPane().add(zero);
+		frame.getContentPane().add(zero);
 
 		JButton decimal = new JButton(".");
-		decimal.addActionListener(new Controller());
+		decimal.setBackground(UIManager.getColor("Button.darkShadow"));
+		decimal.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		decimal.setBounds(249, 532, 98, 80);
-		getFrame().getContentPane().add(decimal);
+		decimal.addActionListener(new Controller());
+		frame.getContentPane().add(decimal);
 
 		JButton result = new JButton("=");
-		result.addActionListener(new Controller());
+		result.setBackground(UIManager.getColor("Button.darkShadow"));
+		result.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		result.setBounds(373, 532, 98, 80);
-		getFrame().getContentPane().add(result);
+		result.addActionListener(new Controller());
+		frame.getContentPane().add(result);
 
 		JButton one = new JButton("1");
+		one.setBackground(UIManager.getColor("Button.darkShadow"));
+		one.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		one.addActionListener(new Controller());
 		one.setBounds(15, 436, 98, 80);
-		getFrame().getContentPane().add(one);
+		frame.getContentPane().add(one);
 
 		JButton two = new JButton("2");
+		two.setBackground(UIManager.getColor("Button.darkShadow"));
+		two.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		two.addActionListener(new Controller());
 		two.setBounds(136, 436, 98, 80);
-		getFrame().getContentPane().add(two);
+		frame.getContentPane().add(two);
 
 		JButton three = new JButton("3");
+		three.setBackground(UIManager.getColor("Button.darkShadow"));
+		three.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		three.addActionListener(new Controller());
 		three.setBounds(249, 436, 98, 80);
-		getFrame().getContentPane().add(three);
+		frame.getContentPane().add(three);
 
 		JButton add = new JButton("+");
-		add.addActionListener(new Controller());
+		add.setBackground(UIManager.getColor("Button.darkShadow"));
+		add.setFont(new Font("Times New Roman", Font.BOLD, 40));
 		add.setBounds(373, 436, 98, 80);
-		getFrame().getContentPane().add(add);
+		add.addActionListener(new Controller());
+		frame.getContentPane().add(add);
 	}
 
 	public JFrame getFrame() {
@@ -176,18 +220,18 @@ public class MiniCalculator {
 					|| action.equals("-") || action.equals("x") || action.equals("+") || action.equals("=")) {
 
 				if (action.equals("AC")) {
-					getTextField().setText("");
+					getDisplay().setText("");
 				} else {
 					System.out.println("keeping it in mind");
 					////////////////////////////////////////
-					getTextField().setText("");
+					getDisplay().setText("");
 				}
 			} else {
-				getTextField().setText(getTextField().getText() + action);
-				System.out.println("sdfgggggz" + (getTextField()));
-				if (getTextField().toString().charAt(0) == 0) {
+				getDisplay().setText(getDisplay().getText() + action);
+				// System.out.println("sdfgggggz" + (getDisplay()));
+				if (getDisplay().toString().charAt(0) == 0) {
 					System.out.println("it is zero");
-					getTextField().setText("");
+					getDisplay().setText("");
 				}
 			}
 

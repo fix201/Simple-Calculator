@@ -213,7 +213,7 @@ public class MiniCalculator {
 					|| action.equals("-") || action.equals("x") || action.equals("+") || action.equals("=")) {
 
 				if (action.equals("AC")) {
-					getDisplay().setText("");
+					getDisplay().setText("0");
 				} else {
 					System.out.println("keeping it in mind");
 					////////////////////////////////////////
